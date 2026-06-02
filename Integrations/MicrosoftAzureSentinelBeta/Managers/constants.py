@@ -1,0 +1,113 @@
+INTEGRATION_NAME = "MicrosoftAzureSentinel"
+PRODUCT_NAME = "Microsoft Azure Sentinel"
+
+
+# ACTIONS NAMES
+PING_SCRIPT_NAME = f"{INTEGRATION_NAME} - Ping"
+LIST_INCIDENTS_SCRIPT_NAME = f"{INTEGRATION_NAME} - List Incidents"
+UPDATE_INCIDENT_DETAILS_SCRIPT_NAME = f"{INTEGRATION_NAME} - Update Incident Details"
+GET_ALERT_RULE_DETAILS_SCRIPT_NAME = f"{INTEGRATION_NAME} - Get Alert Rule Details"
+UPDATE_INCIDENT_LABELS_SCRIPT_NAME = f"{INTEGRATION_NAME} - Update Incident Labels"
+GET_INCIDENT_STATISTICS_SCRIPT_NAME = f"{INTEGRATION_NAME} - Get Incident Statistics"
+LIST_CUSTOM_HUNTING_RULES_SCRIPT_NAME = (
+    f"{INTEGRATION_NAME} - List Custom Hunting Rules"
+)
+GET_CUSTOM_HUNTING_RULE_DETAILS_SCRIPT_NAME = (
+    f"{INTEGRATION_NAME} - Get Custom Hunting Rule"
+)
+CREATE_CUSTOM_HUNTING_RULES_SCRIPT_NAME = (
+    f"{INTEGRATION_NAME} - Create Custom Hunting Rule"
+)
+DELETE_CUSTOM_HUNTING_RULES_SCRIPT_NAME = (
+    f"{INTEGRATION_NAME} - Delete Custom Hunting Rule"
+)
+UPDATE_CUSTOM_HUNTING_RULES_SCRIPT_NAME = (
+    f"{INTEGRATION_NAME} - Update Custom Hunting Rule"
+)
+LIST_ALERT_RULES_SCRIPT_NAME = f"{INTEGRATION_NAME} - List Alert Rules"
+CREATE_ALERT_RULE_SCRIPT_NAME = f"{INTEGRATION_NAME} - Create Alert Rule"
+DELETE_ALERT_RULE_SCRIPT_NAME = f"{INTEGRATION_NAME} - Delete Alert Rule"
+UPDATE_ALERT_RULE_SCRIPT_NAME = f"{INTEGRATION_NAME} - Update Alert Rule"
+RUN_KQL_QUERY_SCRIPT_NAME = f"{INTEGRATION_NAME} - Run KQL Query"
+RUN_CUSTOM_HUNTING_RULE_SCRIPT_NAME = f"{INTEGRATION_NAME} - Run Custom Hunting Rule"
+ADD_COMMENT_TO_INCIDENT_SCRIPT_NAME = f"{INTEGRATION_NAME} - Add Comment to Incident"
+UPDATE_INCIDENT_DETAILS_V2_SCRIPT_NAME = (
+    f"{INTEGRATION_NAME} - Update Incident Details v2"
+)
+UPDATE_INCIDENT_LABELS_V2_SCRIPT_NAME = (
+    f"{INTEGRATION_NAME} - Update Incident Labels v2"
+)
+SYNC_INCIDENTS_JOB_NAME: str = f"{INTEGRATION_NAME} - Sync Incidents"
+
+# TABLES NAMES
+INCIDENTS_TABLE_NAME = "Incidents"
+ALERT_RULE_DETAILS_TABLE = "Microsoft Azure Sentinel Alert Rule Details"
+ALERT_RULES_TABLE_NAME = "Microsoft Azure Sentinel Alert Rules found"
+INCIDENT_STATISTICS_BY_SEVERITY_TABLE_NAME = (
+    f"{PRODUCT_NAME} Incident statistics by Severity"
+)
+INCIDENT_STATISTICS_BY_STATUS_TABLE_NAME = (
+    f"{PRODUCT_NAME} Incident statistics by Status"
+)
+HUNTING_RULES_TABLE_NAME = f"{PRODUCT_NAME} hunting rules found"
+CUSTOM_HUNTING_RULE_DETAILS_TABLE_NAME = f"{PRODUCT_NAME} Hunting Rule Details"
+KQL_QUERY_RESULTS = "KQL Query results"
+HUNTING_RULE_RESULTS_TABLE_NAME = f"{PRODUCT_NAME} hunting rule results"
+
+
+SPECIAL_CHARACTERS_MAPPING = {"\r": "", "\n": "", "\u200b": ""}
+SCHEDULED_ALERT_TYPE_STRING = "Scheduled Alerts"
+SCHEDULED_ALERT_EVENT_KIND = "ScheduledAlert"
+NRT_ALERT_TYPE_STRING = "NRT Alerts"
+NRT_ALERT_EVENT_KIND = "NRT"
+INCIDENT_EVENT_KIND = "Incident"
+ALERT_TYPES_WITH_EVENTS = [SCHEDULED_ALERT_TYPE_STRING, NRT_ALERT_TYPE_STRING]
+PLACEHOLDER_START = "["
+PLACEHOLDER_END = "]"
+CHARACTERS_LIMIT = 256
+GLOBAL_TIMEOUT_THRESHOLD_IN_MIN = 1
+
+FETCH_INCIDENTS_EVENTS_ERROR_MESSAGE = (
+    "Failed to process Azure Sentinel Scheduled Alert with id {incident_name} "
+    "and incident number {incident_number}! "
+    'Query field of the affected alert: "{query}"'
+)
+
+INCIDENT_CONNECTOR_V2_NAME = "Microsoft Azure Sentinel Incidents Connector v2"
+SCHEDULED_ALERTS_EVENTS_DEFAULT_LIMIT = 100
+DEFAULT_INCIDENTS_ALERTS_LIMIT_TO_INGEST = 10
+DEFAULT_VENDOR_NAME = "MicrosoftAzureSentinel"
+DEFAULT_PRODUCT_NAME = "Azure Sentinel"
+DEFAULT_HTTP_REQUEST_TIMEOUT_SECONDS = 60
+FETCH_TIMEOUT_THRESHOLD = 0.8
+STORED_IDS_LIMIT = 3000
+SAFE_ERRORS = ["ValueError", "TimeoutError"]
+ALERTS_EVENTS_DEFAULT_LIMIT = 100
+INCIDENTS_TRACKING_DEFAULT_HOURS = 24
+IDS_FILE_NAME = "ids.json"
+IDS_KEY = "ids"
+INCIDENT_TRACKING_CONNECTOR_NAME = "Microsoft Sentinel Incident Tracking Connector"
+COROS_LIMIT = 20
+SUPPORTED_ENTITY_KINDS = ("Account", "Mailbox", "Host", "Ip")
+CONTEXT_VALUE_CHUNK_LIMIT = 2_800_000
+CONTEXT_VALUE_CHUNK_SIZE = 12_000
+CONTEXT_VALUE_CHUNK_SIZE_REDUCTION = 10
+
+GRAPH_API_ROOT: str = "https://graph.microsoft.com"
+GRAPH_API_ENDPOINTS: list[str] = ["graph-incident", "graph-incident-comments"]
+IDS_FILE_NAME: str = "incident_ids.json"
+IDS_DB_KEY: str = "microsoft_sentinel_incident_ids"
+SECOPS_CASE_TAG: str = "Microsoft Sentinel Incident"
+SECOPS_COMMENT_PREFIX: str = "Google SecOps: "
+SENTINEL_COMMENT_PREFIX: str = "Microsoft Sentinel: "
+SENTINEL_CLOSED_STATUS: str = "Resolved"
+SENTINEL_TAG_PREFIX: str = "Microsoft Sentinel: "
+SECOPS_TAG_PREFIX: str = "Google SecOps: "
+CASE_STATUS_BOTH: str = "BOTH"
+RESOLVED_STATUS: str = "resolved"
+DEFAULT_MAX_HOURS_BACK: int = 24
+SYNC_INCIDENTS_IDENTIFIER: str = "sync_incidents"
+MIN_TAG_LEN: int = 2
+MAX_TAG_LEN: int = 100
+OPEN_STATUS_CODE: int = 1
+CLOSED_STATUS_CODE: int = 2
