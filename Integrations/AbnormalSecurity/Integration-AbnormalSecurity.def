@@ -1,0 +1,143 @@
+{
+    "IsAvailableForCommunity": false,
+    "Identifier": "AbnormalSecurity",
+    "ShouldInstalledInSystem": false,
+    "Version": 1.0,
+    "DisplayName": "Abnormal Security",
+    "Description": "Abnormal Security uses AI to protect organizations from email attacks. This integration enables automated ingestion of threats and cases as SOAR alerts, plus search and remediation of malicious email messages through the Abnormal Security API. For support, contact: support@abnormalsecurity.com",
+    "ImageBase64": "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",
+    "SvgImage": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100\" height=\"100\">\n  <rect width=\"100\" height=\"100\" rx=\"12\" fill=\"#FF3B3B\"/>\n  <text x=\"50\" y=\"65\" font-family=\"Arial,sans-serif\" font-size=\"48\" font-weight=\"bold\"\n        fill=\"white\" text-anchor=\"middle\">A</text>\n</svg>\n",
+    "IsCustom": false,
+    "PythonVersion": 3,
+    "IntegrationProperties": [
+        {
+            "IntegrationIdentifier": "AbnormalSecurity",
+            "PropertyName": "API URL",
+            "PropertyDescription": "The base URL of the Abnormal Security API.",
+            "PropertyDisplayName": "API URL",
+            "PropertyType": 2,
+            "IsMandatory": true,
+            "Value": "https://api.abnormalplatform.com",
+            "Id": 0,
+            "CreationTimeUnixTimeInMs": 1780299186049,
+            "ModificationTimeUnixTimeInMs": 1780299186049
+        },
+        {
+            "IntegrationIdentifier": "AbnormalSecurity",
+            "PropertyName": "API Key",
+            "PropertyDescription": "The API key used to authenticate with the Abnormal Security API.",
+            "PropertyDisplayName": "API Key",
+            "PropertyType": 3,
+            "IsMandatory": true,
+            "Value": null,
+            "Id": 0,
+            "CreationTimeUnixTimeInMs": 1780299186049,
+            "ModificationTimeUnixTimeInMs": 1780299186049
+        },
+        {
+            "IntegrationIdentifier": "AbnormalSecurity",
+            "PropertyName": "Verify SSL",
+            "PropertyDescription": "If enabled, SSL certificates will be verified for API requests.",
+            "PropertyDisplayName": "Verify SSL",
+            "PropertyType": 0,
+            "IsMandatory": false,
+            "Value": "true",
+            "Id": 0,
+            "CreationTimeUnixTimeInMs": 1780299186049,
+            "ModificationTimeUnixTimeInMs": 1780299186049
+        }
+    ],
+    "IntegrationSupportedActions": [
+        {
+            "Name": "Get Case",
+            "Description": "Retrieve full details of a specific Abnormal Security case by its ID, including case status, severity, affected employees, and analysis summary.",
+            "Id": 250,
+            "CreationTimeUnixTimeInMs": 1780299186089,
+            "ModificationTimeUnixTimeInMs": 1780299186089
+        },
+        {
+            "Name": "List Threats",
+            "Description": "Retrieve a paginated list of threats from Abnormal Security. Use the Filter parameter to narrow results by time range (e.g. receivedTime gte 2025-01-01T00:00:00Z) or other supported fields.",
+            "Id": 251,
+            "CreationTimeUnixTimeInMs": 1780299186089,
+            "ModificationTimeUnixTimeInMs": 1780299186089
+        },
+        {
+            "Name": "Search Messages",
+            "Description": "Search for email messages across your organization based on threat indicators such as time range, sender email, or subject. Returns a list of matching messages that can be passed to Remediate Messages for automated response.",
+            "Id": 252,
+            "CreationTimeUnixTimeInMs": 1780299186089,
+            "ModificationTimeUnixTimeInMs": 1780299186089
+        },
+        {
+            "Name": "Remediate Messages",
+            "Description": "Take automated remediation action on email messages identified as threats. Returns an Activity Log ID that can be passed to Get Activity Status to verify the operation completed successfully.",
+            "Id": 253,
+            "CreationTimeUnixTimeInMs": 1780299186089,
+            "ModificationTimeUnixTimeInMs": 1780299186089
+        },
+        {
+            "Name": "Post Threat Action",
+            "Description": "Take a remediation action on an Abnormal Security threat. Use 'remediate' to remediate detected messages, or 'unremediate' to reverse a remediation.",
+            "Id": 254,
+            "CreationTimeUnixTimeInMs": 1780299186089,
+            "ModificationTimeUnixTimeInMs": 1780299186089
+        },
+        {
+            "Name": "Post Case Action",
+            "Description": "Update the status of an Abnormal Security case. Use 'action_required' to flag a case for attention, 'acknowledge' to mark it as reviewed, or 'close' to close the case.",
+            "Id": 255,
+            "CreationTimeUnixTimeInMs": 1780299186089,
+            "ModificationTimeUnixTimeInMs": 1780299186089
+        },
+        {
+            "Name": "Ping",
+            "Description": "Test connectivity and authentication to the Abnormal Security API. Run this action after configuring the integration to verify the API URL and API key are valid before building playbooks.",
+            "Id": 256,
+            "CreationTimeUnixTimeInMs": 1780299186089,
+            "ModificationTimeUnixTimeInMs": 1780299186089
+        },
+        {
+            "Name": "Get Activity Status",
+            "Description": "Check the status of a remediation operation using the Activity Log ID returned by Remediate Messages. Poll this action until the status reaches a terminal state (success, partial_success, or error).",
+            "Id": 257,
+            "CreationTimeUnixTimeInMs": 1780299186089,
+            "ModificationTimeUnixTimeInMs": 1780299186089
+        },
+        {
+            "Name": "List Cases",
+            "Description": "Retrieve a paginated list of cases from Abnormal Security. Use the Filter parameter to narrow results by time range or status (e.g. createdTime gte 2025-01-01T00:00:00Z).",
+            "Id": 258,
+            "CreationTimeUnixTimeInMs": 1780299186089,
+            "ModificationTimeUnixTimeInMs": 1780299186089
+        },
+        {
+            "Name": "Get Threat",
+            "Description": "Retrieve full details of a specific Abnormal Security threat by its ID, including attack type, confidence score, disposition, affected messages, and available remediation actions.",
+            "Id": 259,
+            "CreationTimeUnixTimeInMs": 1780299186089,
+            "ModificationTimeUnixTimeInMs": 1780299186089
+        }
+    ],
+    "Categories": [
+        "Email Security",
+        "Security"
+    ],
+    "HasConnectors": false,
+    "DocumentationLink": "https://abnormalsecurity.com/",
+    "IsCertified": false,
+    "UploaderFullName": null,
+    "PublishComment": null,
+    "UploaderEmail": null,
+    "UploaderImageBase64": null,
+    "UploaderProfileLink": null,
+    "MinimumSystemVersion": 0.0,
+    "ProductionIntegrationIdentifier": null,
+    "Type": 0,
+    "Internal": false,
+    "GoogleSecOpsProduct": false,
+    "Id": 0,
+    "CreationTimeUnixTimeInMs": 1780299186049,
+    "ModificationTimeUnixTimeInMs": 1780299186049,
+    "Custom": false
+}

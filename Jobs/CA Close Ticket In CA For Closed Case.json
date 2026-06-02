@@ -1,0 +1,94 @@
+{
+    "lastRunStatus": null,
+    "lastRunTime": null,
+    "uniqueIdentifier": "9cdcccdc-0147-42d7-8dee-8c56d4a0052d",
+    "id": 0,
+    "jobDefinitionId": 0,
+    "name": "CA Close Ticket In CA For Closed Case",
+    "integration": "CaServiceDesk",
+    "script": "# Copyright 2026 Google LLC\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#     http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n\nfrom __future__ import annotations\nfrom SiemplifyUtils import output_handler\n\n# -*- coding: utf-8 -*-\n# ==============================================================================\n# title           :CaSoapManager.py\n# description     :This Module contain all CA Desk operations functionality using Soap API\n# author          :zdemoniac@gmail.com\n# date            :1-9-18\n# python_version  :2.7\n# libraries       :time, xml, zeep\n# requirements    :pip install zeep, ticketFields names in CA\n# product_version :\n# ==============================================================================\n\n# =====================================\n#              IMPORTS                #\n# =====================================\nfrom CaSoapManager import CaSoapManager\nfrom SiemplifyJob import SiemplifyJob\n\n# =====================================\n#             CONSTANTS               #\n# =====================================\n# Configurations.\nDEFAULT_DAYS_BACKWARDS = 0\nDATE_TIME_STR_FORMAT = \"%d-%m-%Y %H:%M:%S\"\n\n# Consts.\nCA_ALERTS_RULE = \"CA Desk Manager Ticket.\"\nUTC_TIMEZONE_STRING = \"UTC\"\nDEFAULT_CLOSURE_COMMENT = \"Closed at Siemplify.\"\n\n\n# =====================================\n#              CLASSES                #\n# =====================================\n@output_handler\ndef main():\n    try:\n        # Define SiemplifyJob object.\n        siemplify = SiemplifyJob()\n\n        # Obtain Script Name.\n        siemplify.script_name = siemplify.parameters[\"Script Name\"]\n\n        siemplify.LOGGER.info(\"--------------- JOB ITERATION STARTED ---------------\")\n\n        # Parameters\n        # Credentials\n        api_root = siemplify.parameters[\"API Root\"]  # Default: 'http://xxxxx:8080'\n        username = siemplify.parameters[\"Username\"]\n        password = siemplify.parameters[\"Password\"]\n\n        group_filter_str = siemplify.parameters[\"Group Filter\"]\n        group_field = siemplify.parameters.get(\"Group Field\", \"group.combo_name\")\n        ticket_final_status = siemplify.parameters[\"Ticket Final Status\"]\n\n        # Convert str lists to list.\n        group_filter = group_filter_str.split(\",\") if group_filter_str else []\n\n        # Define Ca Desk Manager object.\n        ca_manager = CaSoapManager(api_root, username, password)\n\n        # Get last Successful execution time.\n        last_success_time_unixtime = siemplify.fetch_timestamp(datetime_format=False)\n        siemplify.LOGGER.info(\n            f'Got last successful run: {str(last_success_time_unixtime).encode(\"utf-8\")}'\n        )\n\n        siemplify.LOGGER.info(\n            f'Converted last run time to unixtime:{str(last_success_time_unixtime).encode(\"utf-8\")}'\n        )\n        # Get alerts that were dismissed or the cases they are contained in closed since last success run.\n        ticket_ids_to_close = (\n            []\n        )  # Ticket ids of the dismissed alerts since last success time.\n\n        # Get alert ticket ids from closed cases.\n        siemplify.LOGGER.info(\"Get alert IDs from closed cases.\")\n        ticket_ids_to_close.extend(\n            siemplify.get_alerts_ticket_ids_from_cases_closed_since_timestamp(\n                last_success_time_unixtime, CA_ALERTS_RULE\n            )\n        )\n        siemplify.LOGGER.info(\n            f\"Got {len(ticket_ids_to_close)} alert IDs from closed cases.\"\n        )\n\n        siemplify.LOGGER.info(\"Unify alert IDs list.\")\n        # Unify alert ids list.\n        ticket_ids_to_close = list(set(ticket_ids_to_close))\n\n        siemplify.LOGGER.info(\n            f'Found {str(len(ticket_ids_to_close)).encode(\"utf-8\")} closed alert with ids:{str(ticket_ids_to_close).encode(\"utf-8\")} since:{str(last_success_time_unixtime).encode(\"utf-8\")}'\n        )\n\n        siemplify.LOGGER.info(\"Run on alerts ticket ids\")\n        # Run on tickets ids list and close the ticket at the Ca Desk Manager.\n        for ticket_id in ticket_ids_to_close:\n            siemplify.LOGGER.info(\n                f'Get related cases for alert with ticket id: {str(ticket_id).encode( \"utf-8\")}'\n            )\n            # Verify alert's case is not a test case.\n            related_cases = siemplify.get_cases_by_ticket_id(ticket_id)\n            siemplify.LOGGER.info(\n                f'Got related cases for alert with ticket id {str(ticket_id).encode(\"utf-8\")}: {str(related_cases).encode(\"utf-8\")}'\n            )\n            siemplify.LOGGER.info(\n                f'Run on related cases for alert with ticket id {str(ticket_id).encode(\"utf-8\")}'\n            )\n            for case_id in related_cases:\n                siemplify.LOGGER.info(f\"Run on case id: {ticket_id}\")\n                # Get alert's case content.\n                siemplify.LOGGER.info(\"\")\n                case_content = siemplify._get_case_by_id(str(case_id))\n                # Get the alert content from the case.\n                alerts = case_content[\"cyber_alerts\"]\n                for alert in alerts:\n                    if ticket_id == alert[\"additional_properties\"][\"TicketId\"]:\n                        if alert[\"additional_properties\"][\"IsTestCase\"] == \"False\":\n                            # Close incident.\n                            try:\n                                # Get Description from case closure reason.\n                                description = \"\"\n                                case_closure_reason_data = (\n                                    siemplify.get_case_closure_details(\n                                        [str((case_id)).encode(\"utf-8\")]\n                                    )\n                                )\n\n                                # Get incident group.\n                                incident_group = ca_manager.get_incident_by_id(\n                                    ticket_id, [group_field]\n                                )\n                                # verify group filter.\n                                if (\n                                    group_filter\n                                    and (incident_group[group_field]) in group_filter\n                                ):\n                                    ca_manager.change_ticket_status(\n                                        ticket_id, ticket_final_status\n                                    )\n                                    if case_closure_reason_data:\n                                        closure_data_list = [\n                                            f\"{key}:{str(val).encode('utf-8')}\"\n                                            for key, val in case_closure_reason_data[\n                                                0\n                                            ].items()\n                                        ]\n                                        description = \", \".join(closure_data_list)\n                                        ca_manager.add_comment_to_incident(\n                                            ref_num=ticket_id, comment=description\n                                        )\n\n                                    else:\n                                        ca_manager.add_comment_to_incident(\n                                            ref_num=ticket_id,\n                                            comment=DEFAULT_CLOSURE_COMMENT,\n                                        )\n\n                                    siemplify.LOGGER.info(\n                                        f\"Ticket with id:{ticket_id} closed.\"\n                                    )\n                                else:\n                                    siemplify.LOGGER.info(\n                                        f'Ticket \"{ticket_id}\" did not matched to group.For group {group_filter}'\n                                    )\n                            except Exception as e:\n                                siemplify.LOGGER.error(f\"An error closing ticket: {e}\")\n                                siemplify.LOGGER._log.exception(e)\n\n        # Update last successful run time.\n        siemplify.save_timestamp(datetime_format=True)\n        siemplify.LOGGER.info(\"--------------- JOB ITERATION FINISHED ---------------\")\n    except Exception as err:\n        siemplify.LOGGER.error(f\"Got exception on main handler.Error: {err}\")\n        raise\n\n\nif __name__ == \"__main__\":\n    main()\n",
+    "creator": "5564eee8-a9d8-4497-8bd6-1ef6f75458a2",
+    "description": "Sync closure of the tickets at the CA Desk Manager with Siemplify cases closure.",
+    "isEnabled": false,
+    "isCustom": true,
+    "version": 1,
+    "parameters": [
+        {
+            "id": 1035,
+            "isMandatory": true,
+            "name": "API Root",
+            "type": 2,
+            "value": "http://x.x.x.x:<port>"
+        },
+        {
+            "id": 1036,
+            "isMandatory": true,
+            "name": "Username",
+            "type": 2,
+            "value": "dfgh"
+        },
+        {
+            "id": 1037,
+            "isMandatory": true,
+            "name": "Password",
+            "type": 2,
+            "value": "cgh"
+        },
+        {
+            "id": 1038,
+            "isMandatory": false,
+            "name": "Group Filter",
+            "type": 2,
+            "value": "Tesght"
+        },
+        {
+            "id": 1039,
+            "isMandatory": true,
+            "name": "Group Field",
+            "type": 2,
+            "value": "group.combo_name"
+        },
+        {
+            "id": 1040,
+            "isMandatory": true,
+            "name": "Ticket Final Status",
+            "type": 2,
+            "value": "Closed"
+        },
+        {
+            "id": 1041,
+            "isMandatory": true,
+            "name": "Script Name",
+            "type": 2,
+            "value": "TEST CLOSE"
+        }
+    ],
+    "runIntervalInSeconds": 7200,
+    "creationTime": "2026-06-01T09:20:28.991Z",
+    "lastModificationTime": "2026-06-01T09:20:58.036Z",
+    "isSystemJob": false,
+    "jobDefinitionName": "CA Close Ticket In CA For Closed Case",
+    "agentIdentifier": "",
+    "advanced": false,
+    "advancedConfig": {
+        "timeZone": "Europe/London",
+        "scheduleType": "Once",
+        "oneTimeSchedule": {
+            "startDate": {
+                "year": 2026,
+                "month": 6,
+                "day": 2
+            },
+            "time": {
+                "hours": 9,
+                "minutes": 20,
+                "seconds": 0,
+                "nanos": 0
+            },
+            "interval": 0
+        },
+        "dailySchedule": null,
+        "weeklySchedule": null,
+        "monthlySchedule": null
+    }
+}

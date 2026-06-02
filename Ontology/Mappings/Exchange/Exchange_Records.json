@@ -1,0 +1,46 @@
+[
+    {
+        "id": 0,
+        "source": "Exchange",
+        "familyName": "Default",
+        "familyId": 0,
+        "product": "Exchange",
+        "eventName": "Email file",
+        "mappingStatus": null,
+        "changeSource": 0,
+        "exampleEventFields": []
+    },
+    {
+        "id": 0,
+        "source": "Exchange",
+        "familyName": "Default",
+        "familyId": 0,
+        "product": "Exchange",
+        "eventName": "Exchange Mail Connector Mail Received",
+        "mappingStatus": null,
+        "changeSource": 0,
+        "exampleEventFields": []
+    },
+    {
+        "id": 0,
+        "source": "Exchange",
+        "familyName": "Default",
+        "familyId": 0,
+        "product": "Exchange",
+        "eventName": "Attached Email File",
+        "mappingStatus": null,
+        "changeSource": 0,
+        "exampleEventFields": []
+    },
+    {
+        "id": 0,
+        "source": "Exchange",
+        "familyName": "Default",
+        "familyId": 0,
+        "product": "Exchange",
+        "eventName": "Email Received in Monitoring Mailbox",
+        "mappingStatus": null,
+        "changeSource": 0,
+        "exampleEventFields": []
+    }
+]

@@ -1,0 +1,55 @@
+[
+    {
+        "type": 0,
+        "name": "123#first_template",
+        "content": "Subject: Request for [Project Name/Topic] \u2013 [Your Name]\n\nDear [Recipient's Name],\n\nI hope this email finds you well.\n\nI am currently working on [Project Name/Task] and require your assistance with [specific item, e.g., approving the budget / providing the Q2 data]. Having this information will allow us to [mention the positive outcome, e.g., move forward with the client proposal on time].\n\nCould you please provide [the requested item] by [Date/Day]?\n\nIf you need any additional context or have questions, I am happy to hop on a quick call. Thank you for your time and support.\n\nBest regards,\n\n[Your Name] [Your Title]\n\n[Your Company]\n\n[Your Contact Information]",
+        "creatorUserName": "5564eee8-a9d8-4497-8bd6-1ef6f75458a2",
+        "forMigration": false,
+        "environments": [
+            "Default Environment"
+        ],
+        "id": 1,
+        "creationTimeUnixTimeInMs": 1779963405865,
+        "modificationTimeUnixTimeInMs": 1779963405865
+    },
+    {
+        "type": 0,
+        "name": "First_template",
+        "content": "Hi [Recipient's Name],\n\nI hope you're having a great week.\n\nI'm following up on my previous email regarding [briefly mention the topic, e.g., the marketing proposal sent last Tuesday]. I wanted to check if you've had a chance to review it or if you need any adjustments.\n\nPlease let me know your thoughts when you have a moment.\n\nBest,\n\n[Your Name] [Your Title]\n\n[Your Company]",
+        "creatorUserName": "5564eee8-a9d8-4497-8bd6-1ef6f75458a2",
+        "forMigration": false,
+        "environments": [
+            "Newevn001"
+        ],
+        "id": 2,
+        "creationTimeUnixTimeInMs": 1779963456218,
+        "modificationTimeUnixTimeInMs": 1779963456218
+    },
+    {
+        "type": 0,
+        "name": "123456789",
+        "content": "Subject: Introduction: [Your Name] \u2013 [Reason for reaching out / Common connection]\n\nDear [Recipient's Name],\n\nMy name is [Your Name], and I am a [Your Profession/Role] at [Your Company/University]. I've been following your work with [mention a specific project, company achievement, or article they wrote], and I am incredibly impressed by your approach to [specific industry topic].\n\nI am currently exploring [mention your goal, e.g., new strategies in UX design / career paths in product management] and would love to learn from your experience.\n\nIf your schedule permits, would you be open to a brief, 15-minute virtual coffee chat sometime next week? I would greatly appreciate your insights.\n\nThank you for your time and consideration.\n\nWarmly,\n\n[Your Name] [Link to LinkedIn Profile]",
+        "creatorUserName": "5564eee8-a9d8-4497-8bd6-1ef6f75458a2",
+        "forMigration": false,
+        "environments": [
+            "Default Environment",
+            "Newevn001"
+        ],
+        "id": 3,
+        "creationTimeUnixTimeInMs": 1779963496392,
+        "modificationTimeUnixTimeInMs": 1779963496392
+    },
+    {
+        "type": 0,
+        "name": "@#$%^&*",
+        "content": "Sample Template",
+        "creatorUserName": "5564eee8-a9d8-4497-8bd6-1ef6f75458a2",
+        "forMigration": false,
+        "environments": [
+            "Default Environment"
+        ],
+        "id": 4,
+        "creationTimeUnixTimeInMs": 1779963534613,
+        "modificationTimeUnixTimeInMs": 1779963534613
+    }
+]
