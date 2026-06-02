@@ -1,0 +1,150 @@
+{
+  "IsAvailableForCommunity": false,
+  "Identifier": "ApacheKafkaBeta",
+  "ShouldInstalledInSystem": false,
+  "Version": 1.0,
+  "DisplayName": "Apache Kafka Beta",
+  "Description": "Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.",
+  "ImageBase64": "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",
+  "SvgImage": "<svg viewBox=\"0 0 256 416\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid\"><path d=\"M201.816 230.216c-16.186 0-30.697 7.171-40.634 18.461l-25.463-18.026c2.703-7.442 4.255-15.433 4.255-23.797 0-8.219-1.498-16.076-4.112-23.408l25.406-17.835c9.936 11.233 24.409 18.365 40.548 18.365 29.875 0 54.184-24.305 54.184-54.184 0-29.879-24.309-54.184-54.184-54.184-29.875 0-54.184 24.305-54.184 54.184 0 5.348.808 10.505 2.258 15.389l-25.423 17.844c-10.62-13.175-25.911-22.374-43.333-25.182v-30.64c24.544-5.155 43.037-26.962 43.037-53.019C124.171 24.305 99.862 0 69.987 0 40.112 0 15.803 24.305 15.803 54.184c0 25.708 18.014 47.246 42.067 52.769v31.038C25.044 143.753 0 172.401 0 206.854c0 34.621 25.292 63.374 58.355 68.94v32.774c-24.299 5.341-42.552 27.011-42.552 52.894 0 29.879 24.309 54.184 54.184 54.184 29.875 0 54.184-24.305 54.184-54.184 0-25.883-18.253-47.553-42.552-52.894v-32.775a69.965 69.965 0 0 0 42.6-24.776l25.633 18.143c-1.423 4.84-2.22 9.946-2.22 15.24 0 29.879 24.309 54.184 54.184 54.184 29.875 0 54.184-24.305 54.184-54.184 0-29.879-24.309-54.184-54.184-54.184zm0-126.695c14.487 0 26.27 11.788 26.27 26.271s-11.783 26.27-26.27 26.27-26.27-11.787-26.27-26.27c0-14.483 11.783-26.271 26.27-26.271zm-158.1-49.337c0-14.483 11.784-26.27 26.271-26.27s26.27 11.787 26.27 26.27c0 14.483-11.783 26.27-26.27 26.27s-26.271-11.787-26.271-26.27zm52.541 307.278c0 14.483-11.783 26.27-26.27 26.27s-26.271-11.787-26.271-26.27c0-14.483 11.784-26.27 26.271-26.27s26.27 11.787 26.27 26.27zm-26.272-117.97c-20.205 0-36.642-16.434-36.642-36.638 0-20.205 16.437-36.642 36.642-36.642 20.204 0 36.641 16.437 36.641 36.642 0 20.204-16.437 36.638-36.641 36.638zm131.831 67.179c-14.487 0-26.27-11.788-26.27-26.271s11.783-26.27 26.27-26.27 26.27 11.787 26.27 26.27c0 14.483-11.783 26.271-26.27 26.271z\" style=\"fill:currentColor\"/></svg>",
+  "IsCustom": true,
+  "PythonVersion": 3,
+  "IntegrationProperties": [
+    {
+      "IntegrationIdentifier": "ApacheKafkaBeta",
+      "PropertyName": "Kafka Brokers",
+      "PropertyDescription": "A comma-separated list of Kafka brokers to connect to, in the format `hostname:port`.",
+      "PropertyDisplayName": "Kafka Brokers",
+      "PropertyType": 2,
+      "IsMandatory": true,
+      "Value": "",
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1780412720208,
+      "ModificationTimeUnixTimeInMs": 1780412720208
+    },
+    {
+      "IntegrationIdentifier": "ApacheKafkaBeta",
+      "PropertyName": "Use TLS for connection",
+      "PropertyDescription": "If enabled, the integration uses TLS encryption for authentication. A CA certificate is mandatory for this connection.",
+      "PropertyDisplayName": "Use TLS for connection",
+      "PropertyType": 0,
+      "IsMandatory": false,
+      "Value": "false",
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1780412720208,
+      "ModificationTimeUnixTimeInMs": 1780412720208
+    },
+    {
+      "IntegrationIdentifier": "ApacheKafkaBeta",
+      "PropertyName": "Use SASL PLAIN with TLS for connection",
+      "PropertyDescription": "If enabled, the integration uses the SASL PLAIN username and password mechanism for authentication. This option requires a SASL Username and Password to be provided. It is only supported with TLS encryption, which requires a CA certificate.",
+      "PropertyDisplayName": "Use SASL PLAIN with TLS for connection",
+      "PropertyType": 0,
+      "IsMandatory": false,
+      "Value": "false",
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1780412720208,
+      "ModificationTimeUnixTimeInMs": 1780412720208
+    },
+    {
+      "IntegrationIdentifier": "ApacheKafkaBeta",
+      "PropertyName": "CA certificate of Kafka server",
+      "PropertyDescription": "The Certificate Authority (CA) certificate used to verify the identity of the Kafka server.",
+      "PropertyDisplayName": "CA certificate of Kafka server",
+      "PropertyType": 3,
+      "IsMandatory": false,
+      "Value": null,
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1780412720208,
+      "ModificationTimeUnixTimeInMs": 1780412720208
+    },
+    {
+      "IntegrationIdentifier": "ApacheKafkaBeta",
+      "PropertyName": "Client certificate",
+      "PropertyDescription": "The client's certificate for mutual TLS authentication with the Kafka server.",
+      "PropertyDisplayName": "Client certificate",
+      "PropertyType": 3,
+      "IsMandatory": false,
+      "Value": null,
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1780412720208,
+      "ModificationTimeUnixTimeInMs": 1780412720208
+    },
+    {
+      "IntegrationIdentifier": "ApacheKafkaBeta",
+      "PropertyName": "Client certificate key",
+      "PropertyDescription": "The private key that corresponds to the client's certificate, used for mutual TLS authentication.",
+      "PropertyDisplayName": "Client certificate key",
+      "PropertyType": 3,
+      "IsMandatory": false,
+      "Value": null,
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1780412720208,
+      "ModificationTimeUnixTimeInMs": 1780412720208
+    },
+    {
+      "IntegrationIdentifier": "ApacheKafkaBeta",
+      "PropertyName": "Client certificate key password",
+      "PropertyDescription": "The password used to decrypt the client certificate's private key.",
+      "PropertyDisplayName": "Client certificate key password",
+      "PropertyType": 3,
+      "IsMandatory": false,
+      "Value": null,
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1780412720208,
+      "ModificationTimeUnixTimeInMs": 1780412720208
+    },
+    {
+      "IntegrationIdentifier": "ApacheKafkaBeta",
+      "PropertyName": "SASL PLAIN Username",
+      "PropertyDescription": "The username for SASL PLAIN authentication with Kafka brokers.",
+      "PropertyDisplayName": "SASL PLAIN Username",
+      "PropertyType": 2,
+      "IsMandatory": false,
+      "Value": "",
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1780412720208,
+      "ModificationTimeUnixTimeInMs": 1780412720208
+    },
+    {
+      "IntegrationIdentifier": "ApacheKafkaBeta",
+      "PropertyName": "SASL PLAIN Password",
+      "PropertyDescription": "The password for SASL PLAIN authentication with Kafka brokers.",
+      "PropertyDisplayName": "SASL PLAIN Password",
+      "PropertyType": 3,
+      "IsMandatory": false,
+      "Value": null,
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1780412720208,
+      "ModificationTimeUnixTimeInMs": 1780412720208
+    }
+  ],
+  "IntegrationSupportedActions": [
+    {
+      "Name": "Ping",
+      "Description": "Use the Ping action to test the connectivity to Apache Kafka.",
+      "Id": 86,
+      "CreationTimeUnixTimeInMs": 1780412720216,
+      "ModificationTimeUnixTimeInMs": 1780412720216
+    }
+  ],
+  "Categories": [
+    "IT & Infrastructure"
+  ],
+  "HasConnectors": false,
+  "DocumentationLink": "https://cloud.google.com/chronicle/docs/soar/marketplace-integrations/apache-kafka",
+  "IsCertified": false,
+  "UploaderFullName": null,
+  "PublishComment": null,
+  "UploaderEmail": null,
+  "UploaderImageBase64": "",
+  "UploaderProfileLink": null,
+  "MinimumSystemVersion": 0.0,
+  "ProductionIntegrationIdentifier": null,
+  "Type": 0,
+  "Internal": false,
+  "GoogleSecOpsProduct": false,
+  "Id": 0,
+  "CreationTimeUnixTimeInMs": 1780412720208,
+  "ModificationTimeUnixTimeInMs": 1780412720208
+}
